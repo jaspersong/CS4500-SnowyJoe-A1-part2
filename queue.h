@@ -80,4 +80,4 @@ public:
   // Gets the number of items within the queue. If the queue is empty, it will
   // return 0. Return: The number of items within the queue
   size_t length();
-}
+};

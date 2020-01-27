@@ -32,4 +32,4 @@ public:
   // classes that inherit Object, so they may update its own hash value based
   // off the current state of the object.
   void update_hash();
-}
+};
