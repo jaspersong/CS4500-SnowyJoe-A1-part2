@@ -21,6 +21,7 @@ void t_false(bool p) {
     FAIL();
 }
 
+// good case 1: compare two objects and their hashes
 void test1() {
   Object *o1 = new Object();
   Object *o2 = new Object();
@@ -35,6 +36,7 @@ void test1() {
   delete o2;
 }
 
+// good case 2: compare two queues
 void test2() {
   Queue *q1 = new Queue(Type_Object);
   Queue *q2 = new Queue(Type_String);
@@ -57,6 +59,7 @@ void test2() {
   delete q3;
 }
 
+// good case 3: test length and push functionality for queues
 void test3() {
   Queue *q1 = new Queue(Type_Object);
   Queue *q2 = new Queue(Type_String);
@@ -85,6 +88,7 @@ void test3() {
   delete s1;
 }
 
+// good case 4: test pop functionality for queues
 void test4() {
   Queue *q1 = new Queue(Type_Object);
   Queue *q2 = new Queue(Type_String);
@@ -123,6 +127,7 @@ void test4() {
   delete s2;
 }
 
+// good case 5: test peek functionality for queues
 void test5() {
   Queue *q1 = new Queue(Type_Object);
   Queue *q2 = new Queue(Type_String);
@@ -261,7 +266,8 @@ void test17() {
   t_true(out1 == nullptr);
 }
 
-// bad case 13: when there are only 2 items in the string queue, get the 3rd item, will return null (invalid index)
+// bad case 13: when there are only 2 items in the string queue, 
+// get the 3rd item, will return null (invalid index)
 void test18() {
   Queue *q1 = new Queue(Type_String);
   Queue *q2 = new Queue(Type_Object);
@@ -277,6 +283,26 @@ void test18() {
   Object *out2 = q2->get_object(2);
   t_true(out1 == nullptr);
   t_true(out2 == nullptr);
+}
+
+// bad case 14: test pushing objects onto string queue
+void test19() {
+  Queue *q1 = new Queue(Type_String);
+  String *str1 = new String("Hello");
+  Object *obj1 = new Object();
+
+  t_false(q1->push_object(obj1));
+  t_true(q1->push_string(str1));
+}
+
+// bad case 15: test pushing strings onto object queue
+void test20() {
+  Queue *q1 = new Queue(Type_Object);
+  String *str1 = new String("Hello");
+  Object *obj1 = new Object();
+
+  t_true(q1->push_object(obj1));
+  t_false(q1->push_string(str1));
 }
 
 int main() {
@@ -298,5 +324,7 @@ int main() {
   test16();
   test17();
   test18();
+  test19();
+  test20();
   return 0;
 }
