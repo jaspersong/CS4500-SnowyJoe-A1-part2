@@ -7,6 +7,8 @@
 
 // A class representing an object. Defines virtual functions to be inherited by
 // all other classes.
+// API had been taken from the standardized string.h provided by 
+// https://github.com/chasebish/cwc_object_string
 class Object {
 public:
   // Constructs an object.
@@ -16,20 +18,11 @@ public:
   virtual ~Object();
 
   // Determines if the provided object is the same as the current object.
-  // Parameter: other   The object to compare against
+  // Parameter: obj   The object to compare against
   // Return true if the other object is the same as the current object.
-  virtual bool equals(Object *other);
+  virtual bool equals(Object* const obj);
 
   // Gets the hash value of the object.
   // Return: the hash value
   virtual size_t hash();
-
-  // A virtual function that will determine what the hash value of the object
-  // is. Return: The calculated hash.
-  virtual size_t hash_me();
-
-  // If the object is mutable, the hash will change. This is a function used by
-  // classes that inherit Object, so they may update its own hash value based
-  // off the current state of the object.
-  virtual void update_hash();
 };

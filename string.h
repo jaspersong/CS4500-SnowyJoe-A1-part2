@@ -5,46 +5,42 @@
  * Email: chen.xinu@husky.neu.edu, song.jo@husky.neu.edu
  */
 
-// A class representing a string, inheriting from an Object
+// A class representing a string, inheriting from an Object.
+// API had been taken from the standardized string.h provided by 
+// https://github.com/chasebish/cwc_object_string
 class String : public Object {
 public:
   // Constructs a string.
-  String(char * str);
+  String(const char* s);
 
   // Constructs a string.
-  String(const char * str);
-
-  // Constructs a string.
-  String(char * str, size_t length);
+  String(String* const s);
 
   // Deconstructs a string.
-  virtual ~String();
+  ~String();
+
+  /* Inherited from Object, generates a hash for a String */
+  size_t hash();
 
   // Determines if the provided object is the same as the current object.
-  // Parameter: other   The object to compare against
+  // Parameter: obj   The object to compare against
   // Return true if the other object is the same as the current object.
-  virtual bool equals(Object *other);
+  bool equals(Object* const obj);
 
   // Concats the current string with the provided string.
-  // Parameter: other   The second string.
+  // Parameter: s   The second string.
   // Returns the concatenated string, where this string is first, and the provided stirng
   // is second.
-  virtual String* concat(String *other);
-
-  // Provides the character at provided index. If the index is invalid, throw an error and
-  // terminate the program.
-  // Parameter: i      the 0-indexed value of the desired character.
-  // Returns the character at the specified index.
-  virtual char char_at(size_t i);
+  String* concat(String* const s);
 
   // The length of the string.
   // Returns the number of characters in the string.
-  virtual size_t length();
+  size_t size();
 
   // Compares the current string with the other string.
-  // Parameter: other    The string to compare to
+  // Parameter: s    The string to compare to
   // Returns an integer value. 0 means that both strings are equal; a negative return value
   // means that this string has a lesser alphanumeric value than the other string; a positive
   // return value means that this string has a greater alphanumeric value than the other string.
-  virtual int compare(String *other);
+  int cmp(String* const s);
 };
