@@ -46,7 +46,7 @@ void test2() {
 
   t_true(q2->hash() == q2->hash());
   t_false(q2->hash() == q1->hash());
-  t_true(q2->hash() == q1->hash());
+  t_true(q2->hash() == q3->hash());
 
   t_true(q1->get_queue_item_type() == Type_Object);
   t_true(q2->get_queue_item_type() == Type_String);
@@ -278,11 +278,6 @@ void test18() {
   t_true(out1 == nullptr);
   t_true(out2 == nullptr);
 }
-
-
-
-
-
 
 int main() {
   test1();
