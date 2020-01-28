@@ -31,11 +31,11 @@ public:
 
   // Pushes an object into the queue in a first in, first out style.
   // Parameter: obj  The object to be added to the queue
-  void push_object(Object &obj);
+  void push_object(Object *obj);
 
   // Pushes a string into the queue in a first in, first out style.
   // Parameter: str  The string to be added to the queue
-  void push_string(String &str);
+  void push_string(String *str);
 
   // Retrieves the data type of the items within the queue.
   // Return: The data type of the items within the queue
