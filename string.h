@@ -5,6 +5,11 @@
  * Email: chen.xinu@husky.neu.edu, song.jo@husky.neu.edu
  */
 
+#pragma once
+
+#include <stdlib.h>
+#include "object.h"
+
 // A class representing a string, inheriting from an Object.
 // API had been taken from the standardized string.h provided by 
 // https://github.com/chasebish/cwc_object_string

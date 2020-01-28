@@ -5,6 +5,7 @@
  * Email: chen.xinu@husky.neu.edu, song.jo@husky.neu.edu
  */
 
+#include <stdlib.h>
 #include "object.h"
 #include "queue.h"
 #include "string.h"

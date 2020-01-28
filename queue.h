@@ -5,6 +5,12 @@
  * Email: chen.xinu@husky.neu.edu, song.jo@husky.neu.edu
  */
 
+#pragma once
+
+#include <stdlib.h>
+#include "object.h"
+#include "string.h"
+
 // Enumeration of data types that the queue object can support.
 typedef enum {
   Type_Object = 0,

@@ -5,6 +5,10 @@
  * Email: chen.xinu@husky.neu.edu, song.jo@husky.neu.edu
  */
 
+#pragma once
+
+#include <stdlib.h>
+
 // A class representing an object. Defines virtual functions to be inherited by
 // all other classes.
 // API had been taken from the standardized string.h provided by 
