@@ -24,60 +24,60 @@ public:
   Queue(Types_t type);
 
   // Deconstructs a queue. This will also free all the memory within the queue.
-  ~Queue();
+  virtual ~Queue();
 
   // Clears the queue it is empty.
-  void clear();
+  virtual void clear();
 
   // Pushes an object into the queue in a first in, first out style.
   // Parameter: obj  The object to be added to the queue
-  void push_object(Object *obj);
+  virtual void push_object(Object *obj);
 
   // Pushes a string into the queue in a first in, first out style.
   // Parameter: str  The string to be added to the queue
-  void push_string(String *str);
+  virtual void push_string(String *str);
 
   // Retrieves the data type of the items within the queue.
   // Return: The data type of the items within the queue
-  Types_t get_queue_item_type();
+  virtual Types_t get_queue_item_type();
 
   // Removes the next item in the queue and returns the item itself. The item
   // will be an object, and the queue data type must be an object. If the queue
   // data type is not an object, an error will occur. Return: The next object
-  Object *pop_object();
+  virtual Object *pop_object();
 
   // Removes the next item in the queue and returns the item itself. The item
   // will be an string, and the queue data type must be an string. If the queue
   // data type is not an string, an error will occur. Return: The next string
-  String *pop_string();
+  virtual String *pop_string();
 
   // Gets the next item in the queue, but will not remove it from the queue
   // itself. The item will be an object, and the queue data type must be an
   // object. If the queue data type is not an object, an error will occur
   // Return: The next object
-  Object *peek_object();
+  virtual Object *peek_object();
 
   // Gets the next item in the queue, but will not remove it from the queue
   // itself. The item will be an string, and the queue data type must be an
   // string. If the queue data type is not an string, an error will occur
   // Return: The next string
-  String *peek_string();
+  virtual String *peek_string();
 
   // Gets the item in the queue at the specified index, but will not remove it
   // from the queue itself. The item will be an object, and the queue data type
   // must be an object. If the queue data type is not an object, or if the
   // specified index is not valid, an error will occur Parameter: index    The
   // index of the item in the queue. Return: The object at the specified index
-  Object *get_object(size_t index);
+  virtual Object *get_object(size_t index);
 
   // Gets the item in the queue at the specified index, but will not remove it
   // from the queue itself. The item will be an string, and the queue data type
   // must be an string. If the queue data type is not an string, or if the
   // specified index is not valid, an error will occur Parameter: index    The
   // index of the item in the queue. Return: The string at the specified index
-  String *get_string(size_t index);
+  virtual String *get_string(size_t index);
 
   // Gets the number of items within the queue. If the queue is empty, it will
   // return 0. Return: The number of items within the queue
-  size_t length();
+  virtual size_t length();
 };

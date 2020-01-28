@@ -22,7 +22,7 @@ public:
 
   // Gets the hash value of the object.
   // Return: the hash value
-  size_t hash();
+  virtual size_t hash();
 
   // A virtual function that will determine what the hash value of the object
   // is. Return: The calculated hash.
@@ -31,5 +31,5 @@ public:
   // If the object is mutable, the hash will change. This is a function used by
   // classes that inherit Object, so they may update its own hash value based
   // off the current state of the object.
-  void update_hash();
+  virtual void update_hash();
 };
