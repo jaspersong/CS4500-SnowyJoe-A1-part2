@@ -29,6 +29,9 @@ void test1() {
 
   t_true(o1->hash() == o1->hash());
   t_true(o2->hash() == o2->hash());
+
+  delete o1;
+  delete o2;
 }
 
 void test2() {
@@ -47,6 +50,10 @@ void test2() {
   t_true(q1->get_queue_item_type() == Type_Object);
   t_true(q2->get_queue_item_type() == Type_String);
   t_true(q2->get_queue_item_type() == q3->get_queue_item_type());
+
+  delete q1;
+  delete q2;
+  delete q3;
 }
 
 void test3() {
@@ -70,6 +77,11 @@ void test3() {
   t_true(q2->length() == 2);
   q2->clear();
   t_true(q2->length() == 0);
+
+  delete q1;
+  delete q2;
+  delete o1;
+  delete s1;
 }
 
 void test4() {
@@ -101,6 +113,13 @@ void test4() {
   t_true(q2->length() == 0);
   t_true(out_str_1->equals(s1));
   t_true(out_str_2->equals(s2));
+
+  delete q1;
+  delete q2;
+  delete o1;
+  delete o2;
+  delete s1;
+  delete s2;
 }
 
 void test5() {
@@ -126,6 +145,13 @@ void test5() {
   t_true(q2->peek_string()->equals(s1));
   q2->clear();
   t_true(q2->length() == 0);
+
+  delete q1;
+  delete q2;
+  delete o1;
+  delete o2;
+  delete s1;
+  delete s2;
 }
 
 int main() {
