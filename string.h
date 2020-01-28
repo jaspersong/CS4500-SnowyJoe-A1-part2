@@ -9,7 +9,13 @@
 class String : public Object {
 public:
   // Constructs a string.
-  String();
+  String(char * str);
+
+  // Constructs a string.
+  String(const char * str);
+
+  // Constructs a string.
+  String(char * str, size_t length);
 
   // Deconstructs a string.
   virtual ~String();
