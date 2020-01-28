@@ -169,12 +169,19 @@ void test6() {
   String *out_str_1 = q1->pop_string();
   t_true(out1 == nullptr);
   t_true(out_str_1->equals(s1));
+
+  delete q1;
+  delete s1;
 }
+
 // bad case 2: popping object from an empty object queue
 void test7() {
   Queue *q1 = new Queue(Type_Object);
   Object *out1 = q1->pop_object();
   t_true(out1 == nullptr);
+
+  delete q1;
+  delete out1;
 }
 // bad case 3: popping string from an object queue
 void test8() {
@@ -185,6 +192,9 @@ void test8() {
   Object *out_object = q1->pop_object();
   t_true(out1 == nullptr);
   t_true(out_object->equals(object));
+
+  delete q1;
+  delete object;
 }
 
 // bad case 4: popping string from an empty string queue
@@ -192,6 +202,9 @@ void test9() {
   Queue *q1 = new Queue(Type_String);
   String *out1 = q1->pop_string();
   t_true(out1 == nullptr);
+
+  delete q1;
+  delete out1;
 }
 
 // bad case 5: peek object from an emtpy object queue
@@ -199,6 +212,9 @@ void test10() {
   Queue *q1 = new Queue(Type_Object);
   Object *out1 = q1->peek_object();
   t_true(out1 == nullptr);
+
+  delete q1;
+  delete out1;
 }
 
 // bad case 6: peek string from an object queue
@@ -210,6 +226,9 @@ void test11() {
   Object *out_object = q1->peek_object();
   t_true(out1 == nullptr);
   t_true(out_object->equals(object));
+
+  delete q1;
+  delete object;
 }
 
 // bad case 7: peek string from an emtpy string queue
@@ -217,6 +236,9 @@ void test12() {
   Queue *q1 = new Queue(Type_String);
   String *out1 = q1->peek_string();
   t_true(out1 == nullptr);
+
+  delete q1;
+  delete out1;
 }
 
 // bad case 8: peek object from an string queue
@@ -228,6 +250,9 @@ void test13() {
   String *out_str_1 = q1->peek_string();
   t_true(out1 == nullptr);
   t_true(out_str_1->equals(s1));
+
+  delete q1;
+  delete s1;
 }
 
 // bad case 9: get object from an emtpy object queue
@@ -235,6 +260,9 @@ void test14() {
   Queue *q1 = new Queue(Type_Object);
   Object *out1 = q1->get_object(0);
   t_true(out1 == nullptr);
+
+  delete q1;
+  delete out1;
 }
 
 // bad case 10: get object from an string queue
@@ -246,6 +274,9 @@ void test15() {
   String *out_str_1 = q1->get_string(0);
   t_true(out1 == nullptr);
   t_true(out_str_1->equals(s1));
+
+  delete q1;
+  delete s1;
 }
 
 // bad case 11: get string from an object queue
@@ -257,6 +288,9 @@ void test16() {
   Object *out_object = q1->get_object(0);
   t_true(out1 == nullptr);
   t_true(out_object->equals(object));
+
+  delete q1;
+  delete object;
 }
 
 // bad case 12: get string from an emtpy string queue
@@ -264,6 +298,9 @@ void test17() {
   Queue *q1 = new Queue(Type_String);
   String *out1 = q1->get_string(0);
   t_true(out1 == nullptr);
+
+  delete q1;
+  delete out1;
 }
 
 // bad case 13: when there are only 2 items in the string queue, 
@@ -283,6 +320,13 @@ void test18() {
   Object *out2 = q2->get_object(2);
   t_true(out1 == nullptr);
   t_true(out2 == nullptr);
+
+  delete q1;
+  delete q2;
+  delete str1;
+  delete str2;
+  delete obj1;
+  delete obj2;
 }
 
 // bad case 14: test pushing objects onto string queue
@@ -293,6 +337,10 @@ void test19() {
 
   t_false(q1->push_object(obj1));
   t_true(q1->push_string(str1));
+
+  delete q1;
+  delete str1;
+  delete obj1;
 }
 
 // bad case 15: test pushing strings onto object queue
@@ -303,6 +351,10 @@ void test20() {
 
   t_true(q1->push_object(obj1));
   t_false(q1->push_string(str1));
+
+  delete q1;
+  delete str1;
+  delete obj1;
 }
 
 int main() {
