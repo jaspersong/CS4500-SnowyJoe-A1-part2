@@ -43,7 +43,7 @@ void test2() {
   Queue *q3 = new Queue(Type_String);
 
   t_true(q2->equals(q2));
-  t_false(q2->equals(q1));
+  t_true(q2->equals(q1));
   t_true(q2->equals(q3));
 
   t_true(q2->hash() == q2->hash());
