@@ -21,21 +21,6 @@ void t_false(bool p) {
     FAIL();
 }
 
-// good case 1: compare two objects and their hashes
-void test1() {
-  Object *o1 = new Object();
-  Object *o2 = new Object();
-
-  t_false(o1->equals(o2));
-  t_true(o1->equals(o1));
-
-  t_true(o1->hash() == o1->hash());
-  t_true(o2->hash() == o2->hash());
-
-  delete o1;
-  delete o2;
-}
-
 // good case 2: compare two queues
 void test2() {
   Queue *q1 = new Queue(Type_Object);
@@ -358,7 +343,7 @@ void test20() {
 }
 
 int main() {
-  test1();
+  // Test 1 was removed because it was irrelevant to queue implementation.
   test2();
   test3();
   test4();
