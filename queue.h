@@ -20,7 +20,7 @@ typedef enum {
 // Class inherited from Object that represents a queue of items, which can be of
 // data types listed in Types_t. The queue only supports first in and first out
 // functionality.
-class Queue : Object {
+class Queue : public Object {
 public:
   // Constructs a queue of immutable items that are of specified data type. Once
   // specified, this queue can only have associated functions called. Otherwise,
