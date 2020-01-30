@@ -74,22 +74,6 @@ public:
   // Return: The next string
   virtual String *peek_string();
 
-  // Gets the item in the queue at the specified index, but will not remove it
-  // from the queue itself. The item will be an object, and the queue data type
-  // must be an object. If the queue data type is not an object, or if the
-  // specified index is not valid, it will return with null. 
-  // Parameter: index    The index of the item in the queue. 
-  // Return: The object at the specified index
-  virtual Object *get_object(size_t index);
-
-  // Gets the item in the queue at the specified index, but will not remove it
-  // from the queue itself. The item will be an string, and the queue data type
-  // must be an string. If the queue data type is not an string, or if the
-  // specified index is not valid, it will return with null.
-  // Parameter: index    The index of the item in the queue.
-  // Return: The string at the specified index
-  virtual String *get_string(size_t index);
-
   // Gets the number of items within the queue. If the queue is empty, it will
   // return 0. Return: The number of items within the queue
   virtual size_t length();
